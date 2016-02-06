@@ -1,6 +1,6 @@
 #!/bin/sh -e
-# This tool can be used to initialise the template after making a fresh copy to get started quickly.
-# The goal is to make it as easy as possible to create programs that allow easy testing and continuous integration.
+# This tool is to initialize the project after cloning.
+# The goal is to make easy to create and test new projects.
 
 CAMEL=$(echo "${1}" | grep -E '^([A-Z][a-z0-9]+){2,}$') || CAMEL=""
 
@@ -12,14 +12,15 @@ fi
 
 OPERATING_SYSTEM=$(uname)
 
-if [ "${OPERATING_SYSTEM}" = "Darwin" ]; then
-    SED="gsed"
-    FIND="gfind"
-else
+if [ "${OPERATING_SYSTEM}" = "Linux" ]; then
     SED="sed"
     FIND="find"
+else
+    SED="gsed"
+    FIND="gfind"
 fi
 
-${FIND} . -type f -regextype posix-extended ! -regex '^.*/(build|vendor|\.git|\.idea)/.*$' -exec sh -c '${1} -i -e "s/HtmlSkeleton/${2}/g" ${3}' '_' "${SED}" "${CAMEL}" '{}' \;
 rm init-project.sh
-echo "Done. Files were edited and moved using git. Review those changes."
+# shellcheck disable=SC2016
+${FIND} . -type f -regextype posix-extended ! -regex '^.*/(build|vendor|\.git|\.idea)/.*$' -exec sh -c '${1} -i -e "s/HtmlSkeleton/${2}/g" ${3}' '_' "${SED}" "${CAMEL}" '{}' \;
+echo "Done. Files were edited and moved. Review those changes."
