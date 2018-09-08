@@ -7,7 +7,7 @@ Notable changes to this project are documented here.
 
 ### Added
 
-- Thing that isn't released yet.
+- Thing that is not released yet.
 
 
 ## [0.0.2] - 2015-12-14
@@ -36,5 +36,5 @@ Notable changes to this project are documented here.
 - Thing that was added.
 
 
-[Unreleased]: https://github.com/FunTimeCoding/html-skeleton/compare/v0.0.2...HEAD
-[0.0.2]: https://github.com/FunTimeCoding/html-skeleton/compare/v0.0.1...v0.0.2
+[Unreleased]: https://github.com/FunTimeCoding/hypertext-skeleton/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/FunTimeCoding/hypertext-skeleton/compare/v0.0.1...v0.0.2
