@@ -1,3 +1,7 @@
 build
 tmp
 .vagrant
+node_modules
+web/js/jquery
+web/js/bootstrap
+web/css/bootstrap
