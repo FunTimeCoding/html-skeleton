@@ -57,6 +57,7 @@ cp Vagrantfile "${TARGET}"
 cp Dockerfile "${TARGET}"
 cp Jenkinsfile "${TARGET}"
 cp sonar-project.properties "${TARGET}"
+cp package.json "${TARGET}"
 cd "${TARGET}" || exit 1
 echo "${NAME}" | grep --quiet 'Skeleton$' && IS_SKELETON=true || IS_SKELETON=false
 
