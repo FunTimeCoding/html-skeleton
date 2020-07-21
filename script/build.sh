@@ -1,7 +1,14 @@
 #!/bin/sh -e
 
 rm -rf build
-script/check.sh --ci-mode
 script/reformat.sh --ci-mode
-# TODO: Finish implementation, then uncomment.
-#script/docker/build.sh
+script/check.sh --ci-mode
+script/measure.sh --ci-mode
+script/test.sh --ci-mode
+#SYSTEM=$(uname)
+#
+# TODO: Needs polish.
+#if [ "${SYSTEM}" = Linux ]; then
+#    script/debian/package.sh
+#    script/docker/build.sh
+#fi
